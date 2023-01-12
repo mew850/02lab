@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta0 name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+      }
+    </style>
+</head>
+<script>
+  const reverse = function (headNode) {
+  // headNode 包含 value 和 next 属性，value 表示节点值，next 表示下一节点
+  // 递归
+  if (headNode === null || headNode.next === null)  return headNode;  //空节点或一个节点
+  else {
+    const temp = headNode.next;
+    const p = reverse(headNode.next);
+    temp.next = headNode;
+    headNode.next = null;
+    headNode = p;
+    return headNode;
+  }
+};
+</script>
+
+<body>
+  <div>
+    我是一个盒子
+  </div>
+
+</body>
+
+</html>
